@@ -1,0 +1,34 @@
+{
+  "name": "lingua-screen",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Windows video live subtitle transcription and translation client",
+  "main": "dist-main/main/main.js",
+  "scripts": {
+    "dev": "concurrently -k \"vite\" \"tsc -p tsconfig.main.json --watch\" \"wait-on tcp:5173 file:dist-main/main.js && electron .\"",
+    "build": "tsc -p tsconfig.main.json && vite build",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.main.json --noEmit",
+    "start": "electron .",
+    "test": "vitest run src"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "dotenv": "latest",
+    "electron": "44.0.0",
+    "ffmpeg-static": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "vite": "latest",
+    "ws": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/ws": "latest",
+    "concurrently": "latest",
+    "typescript": "latest",
+    "vitest": "latest",
+    "wait-on": "latest"
+  }
+}
